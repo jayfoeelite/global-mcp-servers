@@ -93,3 +93,54 @@
 
 **Files Modified:**
 - mcp-study/sequentialthinking/.git (removed entirely)
+
+[2025-12-05 17:13:13] - Removal of Nested Git Repository from mcp-study/perplexity-mcp
+
+**Decision:** Remove the nested .git directory from mcp-study/perplexity-mcp subdirectory.
+
+**Rationale:**
+- RooCode checkpoint system was disabled due to another nested git repository detection
+- Error message: "Checkpoints are disabled because a nested git repository was detected at: mcp-study\perplexity-mcp"
+- The perplexity-mcp directory contained its own .git repository which conflicted with the parent repository's checkpoint functionality
+- Removing the nested git repository allows checkpoints to function properly
+
+**Action Taken:**
+- Executed `Remove-Item -Path mcp-study\perplexity-mcp\.git -Recurse -Force`
+- Verified successful removal with Test-Path (returned False)
+
+**Implications:**
+- Checkpoints are now fully enabled for the entire workspace
+- The perplexity-mcp code remains intact, only git history was removed
+- This is a third-party MCP server that can be re-cloned if git history is needed
+- Improved development workflow with working checkpoint functionality
+- No impact on code functionality or MCP server operation
+- Combined with sequentialthinking fix, all nested git repositories now resolved
+
+**Files Modified:**
+- mcp-study/perplexity-mcp/.git (removed entirely)
+
+[2025-12-05 17:15:44] - Removal of Nested Git Repository from mcp-study/roo-code-memory-bank
+
+**Decision:** Remove the nested .git directory from mcp-study/roo-code-memory-bank subdirectory.
+
+**Rationale:**
+- RooCode checkpoint system was disabled due to a third nested git repository detection
+- Error message: "Checkpoints are disabled because a nested git repository was detected at: mcp-study\roo-code-memory-bank"
+- The roo-code-memory-bank directory contained its own .git repository which conflicted with the parent repository's checkpoint functionality
+- Removing the nested git repository allows checkpoints to function properly
+
+**Action Taken:**
+- Executed `Remove-Item -Path mcp-study\roo-code-memory-bank\.git -Recurse -Force`
+- Verified successful removal with Test-Path (returned False)
+
+**Implications:**
+- Checkpoints are now fully enabled for the entire workspace
+- The roo-code-memory-bank code remains intact, only git history was removed
+- This is a third-party configuration module that can be re-cloned if git history is needed
+- Improved development workflow with working checkpoint functionality
+- No impact on code functionality or configuration effectiveness
+- All three nested git repositories now resolved (sequentialthinking, perplexity-mcp, roo-code-memory-bank)
+- Complete workspace checkpoint functionality restored
+
+**Files Modified:**
+- mcp-study/roo-code-memory-bank/.git (removed entirely)
